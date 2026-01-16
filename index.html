@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIS Data Directory | Ankur Verma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .group-card { transition: all 0.3s ease; border-top: 5px solid; }
+        .group-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        html { scroll-behavior: smooth; }
+        .suggestion-item { background: #f0fdf4; border: 1px solid #bbf7d0; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+
+    <header class="bg-white border-b p-8 shadow-sm text-center">
+        <h1 class="text-3xl font-extrabold text-gray-800 mb-6">GIS Data Hub</h1>
+        <div class="max-w-2xl mx-auto">
+            <input type="text" id="searchInput" placeholder="Search for data source (e.g. NASA, Bhuvan, Elevation)..." 
+                   class="w-full p-4 rounded-xl border border-blue-200 focus:ring-4 focus:ring-blue-100 outline-none shadow-sm mb-4">
+            <a href="#suggestionSection" class="text-blue-600 text-sm font-semibold hover:text-blue-800 transition-colors">
+                <i class="fas fa-plus-circle mr-1"></i> Suggest a New GIS Resource
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-6 md:p-12 flex-grow">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="cardContainer">
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm group-card border-orange-500">
+                <h2 class="text-xl font-bold text-gray-800 mb-4 font-sans">Indian Satellite Data</h2>
+                <ul class="space-y-3">
+                    <li><a href="https://bhuvan-app3.nrsc.gov.in/data/download/index.php" target="_blank" class="text-blue-600 hover:underline font-medium">Bhuvan Open Data Download</a></li>
+                    <li><a href="https://bhoonidhi.nrsc.gov.in/bhoonidhi/" target="_blank" class="text-blue-600 hover:underline font-medium">ISRO Bhoonidhi (Multi-Sensor)</a></li>
+                    <li><a href="https://onlinemaps.surveyofindia.gov.in/Home.aspx" target="_blank" class="text-blue-600 hover:underline font-medium">Survey of India (Official Maps)</a></li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm group-card border-green-500">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Global Satellite & Aerial</h2>
+                <ul class="space-y-3">
+                    <li><a href="https://worldview.earthdata.nasa.gov/" target="_blank" class="text-blue-600 hover:underline font-bold">NASA Worldview (Live Imagery)</a></li>
+                    <li><a href="https://browser.dataspace.copernicus.eu/" target="_blank" class="text-blue-600 hover:underline font-medium">Copernicus Data Space (Sentinel)</a></li>
+                    <li><a href="https://map.openaerialmap.org/" target="_blank" class="text-blue-600 hover:underline font-medium">OpenAerialMap (Drone)</a></li>
+                    <li><a href="https://www.planet.com/explorer/" target="_blank" class="text-blue-600 hover:underline font-medium">Planet Explorer (Daily Imagery)</a></li>
+                    <li><a href="https://earthexplorer.usgs.gov/" target="_blank" class="text-blue-600 hover:underline font-medium">USGS EarthExplorer (Landsat)</a></li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm group-card border-purple-500">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Elevation & Tools</h2>
+                <ul class="space-y-3">
+                    <li>
+                        <a href="https://jcallura.github.io/" target="_blank" class="text-blue-600 hover:underline font-bold">JCallura Elevation Tool</a>
+                        <p class="text-[10px] text-gray-400 mt-1 uppercase tracking-tighter">* Supports SHP, CSV & JSON</p>
+                    </li>
+                    <li><a href="https://www.gpsvisualizer.com/elevation" target="_blank" class="text-blue-600 hover:underline font-medium">GPS Visualizer (SRTM/Aster)</a></li>
+                    <li><a href="https://apps.nationalmap.gov/downloader/" target="_blank" class="text-blue-600 hover:underline font-medium">USGS National Map (US DEM)</a></li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm group-card border-indigo-500">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">3D Visualization & Scenes</h2>
+                <ul class="space-y-3">
+                    <li><a href="https://3d-mapper.com/" target="_blank" class="text-blue-600 hover:underline font-medium">3D-Mapper (Drone Modeling)</a></li>
+                    <li><a href="https://www.arcgis.com/home/webscene/viewer.html" target="_blank" class="text-blue-600 hover:underline font-medium">ArcGIS Scene Viewer (3D Web)</a></li>
+                    <li><a href="https://maps.equatorstudios.com/" target="_blank" class="text-blue-600 hover:underline font-medium">Equator Studios (3D Topo)</a></li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm group-card border-cyan-500">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Map Hosting & Development</h2>
+                <ul class="space-y-3">
+                    <li><a href="https://www.maptiler.com/" target="_blank" class="text-blue-600 hover:underline font-medium">MapTiler (Vector Tiles)</a></li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm group-card border-blue-500">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Open Data & Urban</h2>
+                <ul class="space-y-3">
+                    <li><a href="https://www.data.gov.in/" target="_blank" class="text-blue-600 hover:underline font-medium">Data.gov.in (OGD India)</a></li>
+                    <li><a href="https://data.opencity.in/dataset" target="_blank" class="text-blue-600 hover:underline font-medium">OpenCity India (Urban Data)</a></li>
+                    <li><a href="https://livingatlas.arcgis.com/en/" target="_blank" class="text-blue-600 hover:underline font-medium">Esri Living Atlas (Global)</a></li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm group-card border-red-500">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Environment & Climate</h2>
+                <ul class="space-y-3">
+                    <li><a href="https://cpcb.nic.in/manual-monitoring/" target="_blank" class="text-blue-600 hover:underline font-medium">CPCB Monitoring (Pollution)</a></li>
+                    <li><a href="https://indiawris.gov.in/wris/" target="_blank" class="text-blue-600 hover:underline font-medium">India-WRIS (Water)</a></li>
+                    <li><a href="https://chrsdata.eng.uci.edu/" target="_blank" class="text-blue-600 hover:underline font-medium">CHRS Rainfall Portal</a></li>
+                    <li><a href="https://livingatlas.arcgis.com/landcoverexplorer/" target="_blank" class="text-blue-600 hover:underline font-medium">Esri Land Cover (LULC)</a></li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm group-card border-yellow-500">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Geology & Mining</h2>
+                <ul class="space-y-3">
+                    <li><a href="https://bhukosh.gsi.gov.in/Bhukosh/" target="_blank" class="text-blue-600 hover:underline font-medium">GSI Bhukosh (Geological Data)</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div id="suggestionSection" class="mt-20 bg-blue-50 p-8 rounded-3xl border border-blue-100 max-w-2xl mx-auto">
+            <h3 class="text-xl font-bold text-blue-800 mb-4 text-center">Community Contributions</h3>
+            <div id="suggestionList" class="grid grid-cols-1 gap-4 mb-6"></div>
+            <form id="resourceForm" class="space-y-4">
+                <input type="text" id="uName" placeholder="Your Name" required class="w-full p-3 rounded-lg border">
+                <input type="text" id="sName" placeholder="Website Name" required class="w-full p-3 rounded-lg border">
+                <input type="url" id="sUrl" placeholder="URL (https://...)" required class="w-full p-3 rounded-lg border">
+                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 shadow-md">Submit & Share</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t p-6 mt-12">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div>
+                <p class="text-xs text-gray-400 uppercase font-semibold">Developed By</p>
+                <p class="text-gray-800 font-bold text-lg uppercase">Ankur Verma</p>
+                <p class="text-blue-500 text-xs italic">Student of Rakesh Chauhan Sir</p>
+            </div>
+            <div class="flex items-center gap-4 bg-slate-50 p-2 px-4 rounded-full border">
+                <div class="text-right">
+                    <p class="text-xs text-gray-400 uppercase font-semibold">Inspired By</p>
+                    <p class="text-gray-800 font-bold text-md uppercase">Rakesh Chauhan</p>
+                </div>
+                <img src="rakesh-sir.jpg" alt="Mentor" onerror="this.src='https://ui-avatars.com/api/?name=Rakesh+Chauhan'" class="w-14 h-14 rounded-full border-2 border-white shadow-md object-cover">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const term = e.target.value.toLowerCase();
+            document.querySelectorAll('.group-card, .suggestion-item').forEach(el => {
+                el.style.display = el.innerText.toLowerCase().includes(term) ? 'block' : 'none';
+            });
+        });
+
+        const loadSuggestions = () => {
+            const saved = JSON.parse(localStorage.getItem('gisLinks') || '[]');
+            document.getElementById('suggestionList').innerHTML = saved.map(i => `
+                <div class="p-4 rounded-xl suggestion-item border border-green-200">
+                    <h4 class="font-bold text-gray-800">${i.sName}</h4>
+                    <a href="${i.sUrl}" target="_blank" class="text-blue-600 text-sm break-all">${i.sUrl}</a>
+                    <div class="flex justify-between items-center mt-2">
+                        <p class="text-[10px] text-green-700 font-bold uppercase">By: ${i.uName}</p>
+                        <button onclick="navigator.clipboard.writeText('${i.sUrl}'); alert('Copied!');" class="text-[10px] bg-white border px-2 py-1 rounded">Copy</button>
+                    </div>
+                </div>`).join('');
+        };
+
+        document.getElementById('resourceForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const data = { uName: document.getElementById('uName').value, sName: document.getElementById('sName').value, sUrl: document.getElementById('sUrl').value };
+            const saved = JSON.parse(localStorage.getItem('gisLinks') || '[]');
+            saved.push(data);
+            localStorage.setItem('gisLinks', JSON.stringify(saved));
+            loadSuggestions();
+            document.getElementById('resourceForm').reset();
+        });
+        window.onload = loadSuggestions;
+    </script>
+</body>
+</html>
