@@ -1,4 +1,88 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyblue World Map Background</title>
+    <style>
+        /* 1. Skyblue Background with Blur Effect */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #87CEEB, #E0F7FA); /* Skyblue colors */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 2. Search Container with World Map */
+        .search-wrapper {
+            position: relative;
+            width: 100%;
+            height: 300px; /* Is height ko aap adjust kar sakte hain */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* World Map Background (Light Shadow Effect) */
+        .search-wrapper::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* World map image link - aap apni image bhi laga sakte hain */
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_blank_without_borders.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            opacity: 0.15; /* Isse map "light shadow" jaisa dikhega */
+            filter: blur(1px); /* Halki si blur taaki text saaf dikhe */
+            z-index: 0;
+        }
+
+        /* 3. Search Bar Styling */
+        .search-bar {
+            position: relative;
+            z-index: 1;
+            width: 50%;
+            max-width: 500px;
+            padding: 15px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.2); /* Glassmorphism effect */
+            backdrop-filter: blur(10px); /* Background blur effect */
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            outline: none;
+            color: #333;
+        }
+
+        .search-bar::placeholder {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="search-wrapper">
+        <input type="text" class="search-bar" placeholder="Search the world...">
+    </div>
+
+    <div style="padding: 20px; color: #fff; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">
+        <h2>Website Content Here</h2>
+        <p>Aapka baaki content yahan aayega.</p>
+    </div>
+
+</body>
+</html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -173,6 +257,7 @@
 </body>
 
 </html>
+
 
 
 
