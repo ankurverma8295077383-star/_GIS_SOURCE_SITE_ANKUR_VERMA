@@ -1,0 +1,26 @@
+# Block OpenAI (ChatGPT)
+User-agent: GPTBot
+Disallow: /
+
+# Block ChatGPT user requests
+User-agent: ChatGPT-User
+Disallow: /
+
+# Block Google's AI (Gemini/Bard)
+User-agent: Google-Extended
+Disallow: /
+
+# Block Common Crawl (Used for training many AIs)
+User-agent: CCBot
+Disallow: /
+
+# Block Perplexity AI
+User-agent: PerplexityBot
+Disallow: /
+
+# Allow normal search engines (Google, Bing) to index for ranking
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
