@@ -197,55 +197,49 @@
             </div>
         </div>
     </footer>
-   <footer class="bg-[#1a1a1a] text-white border-t-4 border-red-600 p-8 mt-12">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
-                <div class="text-center md:text-left">
-                    <p class="text-xs text-gray-400 uppercase font-semibold tracking-widest mb-1">Developed By</p>
-                    <p class="text-2xl font-extrabold uppercase tracking-tight text-white">Ankur Verma</p>
-                    <p class="text-blue-400 text-sm italic font-medium">Student of Rakesh Chauhan Sir</p>
-                </div>
-
-                <div class="flex items-center gap-4 bg-gray-800 p-3 px-6 rounded-2xl border border-gray-700 shadow-xl">
-                    <div class="text-right">
-                        <p class="text-xs text-gray-400 uppercase font-semibold tracking-widest mb-1">Inspired By</p>
-                        <p class="text-white font-bold text-lg uppercase">Rakesh Chauhan</p>
-                    </div>
-                    <img src="rakesh-sir.jpg" alt="Mentor" onerror="this.src='https://ui-avatars.com/api/?name=Rakesh+Chauhan'" 
-                         class="w-16 h-16 rounded-full border-2 border-blue-500 shadow-lg object-cover">
-                </div>
+   <footer class="bg-[#111111] text-white border-t-4 border-red-700 p-10 mt-16 shadow-2xl">
+        <div class="max-w-7xl mx-auto text-center">
+            
+            <div class="mb-6">
+                <h3 class="text-2xl font-black uppercase tracking-tighter text-white mb-1">Ankur Verma</h3>
+                <p class="text-blue-500 text-xs font-bold tracking-[0.2em] uppercase">GIS Developer & Researcher</p>
             </div>
 
-            <div class="border-t border-gray-800 pt-6 text-center">
-                <p class="text-md font-bold text-gray-200 mb-2">
-                    &copy; 2026 Ankur Verma | All Rights Reserved
-                </p>
-                <p class="text-xs text-gray-500 mb-4 uppercase tracking-widest">
-                    GIS Developer & Researcher | <span class="text-green-500">Verified Property on Google Search Console</span>
-                </p>
-                
-                <div class="bg-red-900/20 border border-red-800/50 p-4 rounded-xl inline-block max-w-3xl">
-                    <p class="text-red-500 text-xs leading-relaxed">
-                        <i class="fas fa-gavel mr-2"></i>
-                        <strong>LEGAL WARNING:</strong> Unauthorized cloning of this design, source code, or GIS data is a violation of the <strong>Indian Copyright Act, 1957</strong>. 
-                        Infringements are automatically monitored and reported to Google Search Quality and Hosting Providers (Vercel/GitHub) via DMCA.
-                    </p>
+            <div class="flex flex-col items-center gap-2 mb-8">
+                <div class="flex items-center gap-2 bg-green-900/30 px-4 py-1 rounded-full border border-green-800">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    <p class="text-green-400 text-[10px] font-bold uppercase tracking-widest">Verified Property on Google Search Console</p>
                 </div>
+                <p class="text-gray-400 text-sm font-medium italic">
+                    All original GIS analysis and research are protected by law.
+                </p>
+            </div>
+
+            <div class="bg-black border-2 border-red-900/50 p-6 rounded-2xl inline-block max-w-4xl shadow-inner">
+                <p class="text-red-600 text-[11px] md:text-xs leading-relaxed font-mono">
+                    <span class="bg-red-700 text-white px-2 py-0.5 rounded mr-2 font-bold uppercase">DMCA Protected</span>
+                    <strong>LEGAL NOTICE:</strong> Unauthorized use, cloning, or distribution of this source code and GIS datasets will lead to an immediate <strong>Legal Notice under the IT Act & Indian Copyright Act, 1957</strong>. 
+                    Copyright infringements are strictly monitored and reported to Google Search Integrity and Hosting Providers.
+                </p>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-gray-900">
+                <p class="text-gray-600 text-[10px] uppercase tracking-[0.3em]">
+                    &copy; 2026 Ankur Verma | Secure Portfolio v2.0
+                </p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Disable Right-Click
+        // Right-Click Block
         document.addEventListener('contextmenu', event => event.preventDefault());
 
-        // Disable Shortcuts (F12, Ctrl+U, Ctrl+I, Ctrl+C)
+        // Hardcore Shortcuts Block (Inspect, View Source, Copy, Save)
         document.onkeydown = function(e) {
             if(e.keyCode == 123 || 
-               (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) || 
-               (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) || 
-               (e.ctrlKey && e.keyCode == 'C'.charCodeAt(0))) {
-                alert("Security Alert: Content Copying is Restricted!");
+               (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || 
+               (e.ctrlKey && (e.keyCode == 'U'.charCodeAt(0) || e.keyCode == 'S'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0)))) {
                 return false;
             }
         };
@@ -285,6 +279,7 @@
 </body>
 
 </html>
+
 
 
 
